@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public contryService: CountryService) {
+    
+  }
 
+  async Run()
+  {
+    console.log(this.contryService.GetCountry());
+  }
 }
