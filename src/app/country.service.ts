@@ -10,55 +10,61 @@ export class CountryService {
   ///Basic
   GetCountry(): string{
     this.delay(5000);
-    return "Get all country...";
+
+    return "Contry data";
   }
 
   GetProvince(countryId: string): string{
     this.delay(3000);
-    return "Get provine by countryId:"+ countryId;
+
+    return "Province data";
   }
 
   GetCity(provinceId: string): string{
     this.delay(3000);
-    return "Get city by provinceId:"+ provinceId;
-  }
 
+    return "City data";
+  }
 
   ///Callback
   GetCountryCallback(callBack: Function){
     this.delay(5000);
-    callBack("Get all country...");
+    var response = "Contry data";
+    callBack(response);
   }
 
   GetProvinceCallback(countryId: string, callBack: Function){
     this.delay(3000);
-    callBack("Get provine by countryId:"+ countryId);
+
+    callBack("Province data");
   }
 
   GetCityCallback(provinceId: string, callBack: Function){
     this.delay(3000);
-    callBack("Get city by provinceId:"+ provinceId);
+
+    callBack("City data");
   }
 
   ///Promise
   GetCountryAsync(): Promise<string>{
+    this.delay(5000);
     return new Promise(function(resolve, reject) {
-      this.delay(5000);
-      resolve("Get all country...");
+      resolve("Contry data");
     });
   }
 
   GetProvinceAsync(countryId: string): Promise<string>{
+    this.delay(3000);
+    console.log(countryId);
     return new Promise(function(resolve, reject) {
-      this.delay(3000);
-      resolve("Get provine by countryId:"+ countryId);
+      resolve("Province data");
     });
   }
 
-  GetCityAsync(provinceId: string, callBack: Function){
+  GetCityAsync(provinceId: string): Promise<string>{
+    this.delay(3000);
     return new Promise(function(resolve, reject) {
-      this.delay(3000);
-      resolve("Get city by provinceId:"+ provinceId);
+      resolve("City data");
     });
   }
 
